@@ -4,7 +4,7 @@ const fs = require('fs')
 const app = express()
 const bcrypt = require('bcrypt')
 
-const port = 3000;
+const port = 6001;
 
 app.use(express.json())
 app.use(cors())
