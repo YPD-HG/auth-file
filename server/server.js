@@ -5,7 +5,7 @@ const app = express()
 const bcrypt = require('bcrypt')
 
 const port = 6001;
-
+let users =[];
 app.use(express.json())
 app.use(cors())
 
@@ -21,10 +21,11 @@ app.post('/users/login', async (req, res) => {
 
     let file_content = fs.readFileSync('server.json', 'utf-8')
 
-    let parsed_file = JSON.parse(file_content)
+    let parsed_file = null;
     if (!file_content.trim()) {
         user_entry = null;
     } else {
+        parsed_file = JSON.parse(file_content)
         user_entry = parsed_file.find(element => element.username == req.body.username)
         // if we are in this else implued, that we can either have undefined or a value an json obj.
 

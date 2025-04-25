@@ -1,5 +1,3 @@
-
-
 let verdict_div = document.getElementById('verdict')
 async function login() {
     let username = document.getElementById('username').value
@@ -13,8 +11,6 @@ async function login() {
         console.log("Verdict :", verdict.data)
         verdict_div.innerHTML = `<h3>${verdict.data}</h3>`
     }
-
     document.getElementById('username').value = ``
     document.getElementById('password').value = ``
-
 }
