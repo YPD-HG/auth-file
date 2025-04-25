@@ -6,7 +6,7 @@ async function login() {
     let password = document.getElementById('password').value
     if (username !== '' && password !== '') {
         console.log(JSON.stringify({ username: username, password: password }))
-        let verdict = await axios.post('http://localhost:3000/users/login', {
+        let verdict = await axios.post('http://localhost:6001/users/login', {
             username: username,
             password: password
         })
